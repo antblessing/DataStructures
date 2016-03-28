@@ -1,6 +1,7 @@
 class Stack
   def initialize
     @top = nil
+    @size = 0
   end
 
   def is_empty?
@@ -37,6 +38,7 @@ class Stack
   		new_node.previous_node = @top
   		@top = new_node
   	end
+    @size += 1
   end
 
   def pop
@@ -47,5 +49,6 @@ class Stack
   		@top = current_node.previous_node
   		current_node = nil
   	end
+    @size -= 1
   end
 end
