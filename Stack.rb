@@ -1,4 +1,5 @@
 class Stack
+  require 'node'
   def initialize
     @top = nil
     @size = 0
