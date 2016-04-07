@@ -21,35 +21,34 @@ class Queue
 			counter += 1
 		end
 
-		until @stack_out.is_empty?
-			@stack_in.push(@stack_out.peek)
-			@stack_out.pop
-		end
+		self.empty_stack_out
 		return counter
 	end
 
 	def find_head
-		until @stack_in.is_empty?
-			@stack_out.push(@stack_in.peek)
-			@stack_in.pop
-		end
+		self.empty_stack_in
 		return head = @stack_out.peek
-		until @stack_out.is_empty?
-			@stack_in.push(@stack_out.peek)
-			@stack_out.pop
-		end
+		self.empty_stack_out
 	end
 
 	def remove
-		until @stack_in.is_empty?
-			@stack_out.push(@stack_in.peek)
-			@stack_in.pop
-		end
+		self.empty_stack_in
 		@stack_out.pop
 		@head = @stack_out.peek
-		until @stack_out.is_empty?
-			@stack_in.push(@stack_out.peek)
-			@stack_out.pop
-		end
+		self.empty_stack_out
 	end
+
+  def empty_stack_in
+    until @stack_in.is_empty?
+      @stack_out.push(@stack_in.peek)
+      @stack_in.pop
+    end
+  end
+
+  def empty_stack_out
+    until @stack_out.is_empty?
+      @stack_in.push(@stack_out.peek)
+      @stack_out.pop
+    end
+  end
 end
