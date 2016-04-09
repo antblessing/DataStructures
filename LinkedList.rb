@@ -1,5 +1,6 @@
+require 'node'
 class LinkedList
-  require 'node'
+  
   def initialize
     @head = nil
     @tail = @head
