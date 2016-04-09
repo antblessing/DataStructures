@@ -1,5 +1,8 @@
+require 'node'
 class Stack
-  require 'node'
+
+  attr_accessor :size
+  
   def initialize
     @top = nil
     @size = 0
@@ -47,9 +50,11 @@ class Stack
   		puts "Stack is empty."
   	else
   		current_node = @top
+      result = current_node
   		@top = current_node.previous_node
   		current_node = nil
   	end
     @size -= 1
+    return result
   end
 end
