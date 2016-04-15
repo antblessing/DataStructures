@@ -1,5 +1,5 @@
 require 'treenode'
-class BinaryTree
+class BinarySearchTree
 	attr_accessor :root
   def initialize
     @root = nil
