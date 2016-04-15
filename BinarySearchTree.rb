@@ -9,6 +9,8 @@ class BinaryTree
     return false if @top
     true
   end
+
+  # In-order traversal without allowance of duplicate numbers.
   def insert(data)
     current_node = @root
     if @root
