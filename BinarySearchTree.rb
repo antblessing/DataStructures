@@ -43,14 +43,14 @@ class BinarySearchTree
 				end
   		end
   		if !current_node
-  			return "#{data} not found."
+  			return false
   		else
-  		  return "#{data} found"
+  		  return true
   		end
   	end
   end
 
-  def print_order(head)
+  def print_order(head = @root)
   	if head == nil
   		return
   	end
